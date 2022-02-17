@@ -1,0 +1,308 @@
+/* preloader css start*/
+
+.shadow {
+    -moz-box-shadow: 3px 3px 5px 6px rgb(255, 255, 255) !important;
+    -webkit-box-shadow: 3px 3px 5px 6px rgb(255, 255, 255) !important;
+    box-shadow: 5px 4px 10px 4px rgb(230, 223, 223) !important;
+    /* box-shadow: 1px 1px 1px 1px rgb(230, 223, 223) !important; */
+}
+
+.mlbox {
+    margin-left: auto !important;
+}
+
+.ml-2 {
+    margin-left: 2rem !important;
+}
+
+.ml-1 {
+    margin-left: 1rem !important;
+}
+
+.navbar ul li ul li a .size {
+    font-size: 12px !important;
+    margin-right: 5px;
+    color: #111111;
+}
+
+.col-lg-3box {
+    max-width: 30% !important;
+    margin: auto;
+}
+
+.heights {
+    height: 300px !important;
+}
+
+.height-400 {
+    height: 345px !important;
+    overflow: hidden !important;
+}
+
+section .partner {
+    height: auto !important;
+}
+
+.media-img {
+    height: 130px !important;
+    width: 130px !important;
+    background-color: #fff;
+    box-sizing: border-box;
+    box-shadow: #fff;
+    /* border: 2px solid rgb(54, 226, 68); */
+    border-radius: 10px;
+    background-color: rgb(241, 241, 241) !important;
+    box-shadow: 1px 1px 1px 1px rgb(230, 223, 223) !important;
+}
+
+.col-lgl-3 {
+    max-width: 15% !important;
+}
+
+.icon-width {
+    width: 130px !important;
+    height: 130px !important;
+    margin-top: 15px !important;
+}
+
+.icon-width:hover {
+    border: 3px solid gray;
+}
+
+.icon i {
+    font-size: 50px !important;
+}
+
+.short {
+    width: 300x !important;
+}
+
+.border-img img {
+    transition: .5s ease;
+    border-radius: 10px !important;
+    height: 120px !important;
+    width: 260px !important;
+}
+
+.border-img img:hover {
+    /* box-shadow: 0 0 0 10px #000000; */
+    box-shadow: 0 0 0 10px #c3c4c5;
+    transition: .5s ease;
+    border-radius: 10px !important;
+    border: 3px solid #e6e7e8;
+    filter: grayscale(0%);
+    filter: gray;
+    -webkit-filter: grayscale(0%);
+    filter: none;
+    transition: 1s ease;
+}
+
+.hover-areas:hover {
+    transform: scale(1.1);
+    transition: .5s;
+    overflow: hidden !important;
+}
+
+.hover-area:hover {
+    transition: .1s ease;
+    transform: scale(1);
+    border: 3px solid #adadad;
+    overflow: hidden !important;
+}
+
+.fs--12 {
+    font-size: 14px !important;
+}
+
+.fs--12 {
+    font-size: 14px !important;
+}
+
+footer ul li {
+    text-align: left;
+    margin-left: 50px!important;
+}
+
+footer ul li .size {
+    margin-right: 14px!important;
+}
+
+footer ul a {
+    margin-right: 14px!important;
+    color: #ffffff;
+}
+
+footer ul a:hover {
+    color: #b4b3b3 !important;
+}
+
+footer h4 {
+    text-align: left;
+    margin-left: 45px!important;
+}
+
+@media screen and (max-width: 800px) {
+    .left,
+    .main,
+    .right {
+        width: 100%;
+        /* The width is 100%, when the viewport is 800px or smaller */
+    }
+    .col-lg-3box {
+        max-width: 30% !important;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .col-lg-3box {
+        max-width: 100% !important;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .col-lg-3box {
+        max-width: 100% !important;
+        margin: auto !important;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .col-lg-3box {
+        max-width: 49% !important;
+        margin: auto !important;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .col-lg-3box {
+        max-width: 49% !important;
+        margin: auto !important;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .col-lg-3box {
+        max-width: 100% !important;
+        margin: auto !important;
+    }
+}
+
+
+/* progressbar css */
+
+
+/**
+/**
+ * Inspiration for this project found at:
+ * https://markus.oberlehner.net/blog/pure-css-animated-svg-circle-chart
+ * 1. The `reverse` animation direction plays the animation backwards
+ *    which makes it start at the stroke offset 100 which means displaying
+ *    no stroke at all and animating it to the value defined in the SVG
+ *    via the inline `stroke-dashoffset` attribute.
+ * 2. Rotate by -90 degree to make the starting point of the
+ *    stroke the top of the circle.
+ * 3. Using CSS transforms on SVG elements is not supported by Internet Explorer
+ *    and Edge, use the transform attribute directly on the SVG element as a
+ * .  workaround.
+ */
+
+.progressbar {
+    margin-top: 0 !important;
+    display: block;
+    display: flex !important;
+    justify-content: space-around !important;
+    align-items: center !important;
+}
+
+.circle-chart {
+    width: 150px;
+    height: 150px;
+}
+
+.circle-chart__circle {
+    stroke: #00acc1;
+    stroke-width: 2;
+    stroke-linecap: square;
+    fill: none;
+    animation: circle-chart-fill 2s reverse;
+    /* 1 */
+    transform: rotate(-90deg);
+    /* 2, 3 */
+    transform-origin: center;
+    /* 4 */
+}
+
+
+/**
+   * 1. Rotate by -90 degree to make the starting point of the
+   *    stroke the top of the circle.
+   * 2. Scaling mirrors the circle to make the stroke move right
+   *    to mark a positive chart value.
+   * 3. Using CSS transforms on SVG elements is not supported by Internet Explorer
+   *    and Edge, use the transform attribute directly on the SVG element as a
+   * .  workaround.
+   */
+
+.circle-chart__circle--negative {
+    transform: rotate(-90deg) scale(1, -1);
+    /* 1, 2, 3 */
+}
+
+.circle-chart__background {
+    stroke: #efefef;
+    stroke-width: 3;
+    fill: none;
+}
+
+.circle-chart__info {
+    animation: circle-chart-appear 2s forwards;
+    opacity: 0;
+    transform: translateY(0.3em);
+}
+
+.circle-chart__percent {
+    alignment-baseline: central;
+    text-anchor: middle;
+    font-size: 8px;
+}
+
+.circle-chart__subline {
+    alignment-baseline: central;
+    text-anchor: middle;
+    font-size: 3px;
+}
+
+.success-stroke {
+    stroke: #00C851;
+}
+
+.warning-stroke {
+    stroke: #ffbb33;
+}
+
+.blue-stroke {
+    stroke: blue;
+}
+
+.black-stroke {
+    stroke: black;
+}
+
+.danger-stroke {
+    stroke: #ff4444;
+}
+
+@keyframes circle-chart-fill {
+    to {
+        stroke-dasharray: 0 100;
+    }
+}
+
+@keyframes circle-chart-appear {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,15 @@
+ import './sitejs/jquery-3.6.0.min.js';
+ import './sitejs/myjs.js';
+ import './sitejs/progresscircle.js';
+ import './sitejs/script.js';
+ import './sitejs/theme.js';
+ import './sitejs/bootstrap.min.js';
+ import './sitejs/swiper-bundle.min.js';
+ import './sitejs/is.min.js';
+ import './sitejs/all.min.js';
+ import './sitejs/lodash.min.js';
+ import './sitejs/imagesloaded.pkgd.min.js';
+ import './sitejs/customEase.js';
+ import './sitejs/gsap.js';
+ import './sitejs/countUp.umd.js';
+ //import './sitejs/slick.min.js';
