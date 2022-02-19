@@ -1,0 +1,222 @@
+/* domain */
+.banner-content {
+    padding: 120px 0;
+}
+.fly-adv {
+    width: 200px;
+    height: 200px;
+    background: #424344;
+    border-radius: 10%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    color: #fff;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    position: absolute;
+    right: 220px;
+    top: 180px;
+    z-index: 1;
+}
+.banner .fly-adv .adv-content {
+    text-align: center;
+}
+.banner .banner-content .part-text {
+    background: #424344;
+    padding: 50px 50px;
+    border-radius: 5%;
+}
+.banner .banner-content .part-text h1 span {
+    font-weight: 300;
+    font-size: 34px;
+}
+.banner .banner-content .part-text ul li span {
+    font-size: 14px;
+}
+.banner .banner-content .part-text ul li {
+    color: #fff;
+    font-size: 16px;
+    padding: 2px 0;
+}
+.banner .part-img img {
+    width: 500px;
+    max-width: none;
+    position: absolute;
+    top: 40%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.domain h1{
+font-size: 35px;
+text-align: center;
+margin-top: 35px;
+
+
+}
+.domain {
+
+    border-radius: 10px !important;
+    height: 120px !important;
+    flex: 0 0 auto;
+    width: 18% !important;
+    box-shadow: 4 4px 8px 5 #fff;
+    margin: 10px;
+
+}
+.domain:hover.domain {
+    box-shadow: 10 10 10 10px #fefeff;
+    border: 3px solid gray;
+
+}
+/* hosting */
+* hosting */
+.price .single-price {
+    text-align: center;
+    -webkit-box-shadow: 0px 0px 30px 0px rgb(0 0 0 / 25%);
+    box-shadow: 0px 0px 30px 0px rgb(0 0 0 / 25%);
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+}
+.price .single-price .part-price {
+    padding: 35px 0 33px;
+    text-align: center !important;
+}
+.price .single-price .part-price span.start-text {
+    font-size: 16px;
+    color: #242424;
+    text-align: center !important;
+}
+.price .single-price .part-price span.price-text {
+    font-size: 36px;
+    color: #12b103;
+    font-weight: 600;
+    text-align: center !important;
+}
+.price .single-price .part-price span.duration-text {
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: -5px;
+}
+.price .single-price .part-category h3 {
+    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+    /* background: #034db1; */
+    margin: 0;
+    padding: 11px 0 16px;
+    text-align: center !important;
+}
+.price .single-price .part-feature {
+    text-align: left;
+    padding: 29px 60px 27px;
+}
+.price .single-price .part-feature ul li {
+    color: #242424;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 6px 0;
+}
+.price .single-price .part-feature ul  {
+   list-style: none !important;
+}
+.price .single-price .part-feature ul li span.check {
+    color: #0c9419;
+}
+.myButton {
+    background-color: #34b103;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    border: 0px solid #0c9419;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 19px;
+    padding: 6px 10px;
+    text-align: center !important;
+
+
+}
+
+.myButton:hover {
+    background-color: #ff0505;
+    color: #ffffff;
+}
+
+.myButton:active {
+    position: relative;
+    top: 1px;
+}
+.hosting .nav.nav-tabs {
+    margin-bottom: 60px;
+    border: none;
+}
+.tab-content>.active {
+    display: block;
+}
+.fade {
+    transition: opacity .15s linear;
+}
+.price .single-price .part-price span {
+    display: block;
+}
+.price .single-price .part-feature {
+    text-align: left;
+    padding: 29px 60px 27px;
+}
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    outline: none;
+}
+.hosting .nav.nav-tabs .nav-item:first-child .nav-link {
+    /* border-radius: 50px 0px 0px 50px; */
+}
+.hosting .nav.nav-tabs .nav-item .nav-link.active {
+    background: #06f339;
+    color: #fff;
+}
+.hosting .nav.nav-tabs .nav-item .nav-link {
+    text-align: center;
+    height: 70px;
+    line-height: 70px;
+    padding: 0;
+    font-size: 18px;
+    color: #777;
+    font-weight: 600;
+    border-radius: 0;
+    border-bottom: 1px solid;
+    border-top: 1px solid;
+    border-left: 1px solid;
+    border-color: rgba(255, 255, 255, 0.2);
+    border-right: 0;
+    color: #6d6d6d;
+}
+.price .single-price .part-category h3 {
+    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+    background: #20b103;
+    margin: 0;
+    padding: 11px 0 16px;
+}
+.price .single-price .part-price {
+    padding: 35px 0 33px;
+}
+.hosting .nav.nav-tabs {
+    margin-bottom: 60px;
+    border: none;
+}
+.nav-tabs .nav-item {
+    margin-bottom: -1px;
+}
+.hosting .nav.nav-tabs .nav-item:last-child .nav-link {
+    border-right: 1px solid rgba(14, 236, 6, 0.2);
+    border-radius: 0 50px 50px 0;
+}

@@ -28,4 +28,7 @@ class HomeController extends Controller
 public function domain(){
     return view('site.pages.domain');
 }
+public function vpshosting(){
+    return view('site.pages.vpshosting');
+}
 }

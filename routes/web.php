@@ -28,6 +28,7 @@ Route::get('/', function () {
 // fontend route
 Route::get('/',[HomeController::class,'index'])->name('/');
 Route::get('/domain',[HomeController::class,'domain'])->name('domain-register');
+Route::get('/vpshosting',[HomeController::class,'vpshosting'])->name('vpshosting');
 Auth::routes();
 // admin
 

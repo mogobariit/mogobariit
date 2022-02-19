@@ -23,6 +23,7 @@
     <!-- ===============================================-->
 
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('css/coustom.css')}}">
     <link rel="stylesheet" href="{{asset('site')}}/assets/css/slick-theme.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;family=Open+Sans:wght@300;400;600;700;800&amp;display=swap"
@@ -80,11 +81,12 @@
                                 class="nav-link dropdown-toggle dropdown-indicator" href="" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">Hosting</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item hover-bg-200" href=""><i
-                                            class="fas fa-retweet size"></i>Share Hosting</a></li>
+                                <li><a class="dropdown-item hover-bg-200" href="{{route('vpshosting')}}"><i
+                                            class="fas fa-retweet size"></i>VPS
+                                        Hosting</a></li>
 
                                 <li><a class="dropdown-item hover-bg-200" href=""><i
-                                            class="fas fa-envelope-open-text size"></i>VPS Hosting</a></li>
+                                            class="fas fa-envelope-open-text size"></i>Sheare Hosting</a></li>
 
                                 <li><a class="dropdown-item hover-bg-200" href=""><i
                                             class="fab fa-slideshare size"></i>Cloud Hosting</a></li>
@@ -280,7 +282,8 @@
     <script src="{{asset('site')}}/vendors/swiper/swiper-bundle.min.js "></script>
     <script src="{{asset('site')}}/vendors/fontawesome/all.min.js "></script>
     <script src="{{asset('site')}}/vendors/lodash/lodash.min.js "></script>
-    <script src="{{asset('site')}}/vendors/imagesloaded/imagesloaded.pkgd.min.js "></script>
+    <script src="{{asset('site')}}/vendors/imagesloaded/imagesloaded.pkgd.min.js ">
+    </script>
     <script src="{{asset('site')}}/vendors/gsap/gsap.js "></script>
     <script src="{{asset('site')}}/vendors/gsap/customEase.js "></script>
     <script src="{{asset('js/app.js')}}"></script>
