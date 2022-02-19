@@ -31,4 +31,11 @@ public function domain(){
 public function vpshosting(){
     return view('site.pages.vpshosting');
 }
+public function shearheosting(){
+    return view('site.pages.shearehosting');
+}
+public function contactpage(){
+    return view('site.pages.contactpage');
+}
+
 }

@@ -85,7 +85,7 @@
                                             class="fas fa-retweet size"></i>VPS
                                         Hosting</a></li>
 
-                                <li><a class="dropdown-item hover-bg-200" href=""><i
+                                <li><a class="dropdown-item hover-bg-200" href="{{route('shearheosting')}}"><i
                                             class="fas fa-envelope-open-text size"></i>Sheare Hosting</a></li>
 
                                 <li><a class="dropdown-item hover-bg-200" href=""><i
@@ -164,7 +164,7 @@
                         <li class="nav-item dropdown hover-bg-200">
                             <a class="nav-link " href=" " role="button ">Project</a>
                         </li>
-                        <li class="nav-item dropdown hover-bg-200"><a class="nav-link " href=" "
+                        <li class="nav-item dropdown hover-bg-200"><a class="nav-link " href="{{route('contactpage')}}"
                                 role="button ">Contact</a></li>
                     </ul>
                     <a class="btn btn-outline-success btn-dark text-white rounded-pill btn-sm border-1 d-block d-lg-inline-block ms-auto my-3 my-lg-0"
@@ -265,9 +265,20 @@
     <!-- ===============================================-->
     <!--    JavaScripts-->
     <!-- ===============================================-->
-    <script src="./assets/js/script.js "></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+    </script>
     <script src="{{asset('site')}}/assets/js/jquery-3.6.0.min.js ">
     </script>
+    <script src="{{asset('site/assets/js/jquery-3.3.1.slim.min.js')}}"></script>
+    <script src="./assets/js/script.js "></script>
+
     <script src="{{asset('site')}}/assets/js/slick.min.js "></script>
     <script src="{{asset('site')}}/assets/js/myjs.js "></script>
     <script src="{{asset('site')}}/vendors/popper/popper.min.js "></script>
@@ -307,12 +318,17 @@
             '.google-analytics.com/ga.js';
         var s = document.getElementsByTagName('script')[0];
         s.parentNode.insertBefore(ga, s);
-    })();
-    </script>
-</body>
+    })(); <
+    /s
+    cript >
+        <
+        /body>
 
-</html>
+        <
+        /html>
 
 
 
-</html>
+
+        <
+        /html>

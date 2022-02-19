@@ -29,6 +29,8 @@ Route::get('/', function () {
 Route::get('/',[HomeController::class,'index'])->name('/');
 Route::get('/domain',[HomeController::class,'domain'])->name('domain-register');
 Route::get('/vpshosting',[HomeController::class,'vpshosting'])->name('vpshosting');
+Route::get('/shearheosting',[HomeController::class,'shearheosting'])->name('shearheosting');
+Route::get('/contact',[HomeController::class,'contactpage'])->name('contactpage');
 Auth::routes();
 // admin
 
