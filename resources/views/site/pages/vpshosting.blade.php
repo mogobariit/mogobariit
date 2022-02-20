@@ -1,6 +1,6 @@
 @extends('site.layout.app')
 @section('site-cotentn')
-<div class="price hosting">
+<div class="price hosting bg-100">
     <div class="container">
         <div class="row justify-content-center mt-10">
             <div class="col-xl-8 col-lg-8">
@@ -19,8 +19,8 @@
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                         <div class="row justify-content-md-start justify-content-sm-center">
-                            <div class="col-xl-4 col-lg-4 col-sm-8 col-md-6">
-                                <div class="single-price">
+                            <div class="col-xl-4 col-lg-4 col-sm-8 col-md-6 ">
+                                <div class="single-price shadow">
                                     <div class="part-price">
                                         <span class="start-text">Starting At</span>
                                         <span class="price-text">৳800</span>
@@ -69,7 +69,7 @@
                             </div>
 
                             <div class="col-xl-4 col-lg-4 col-sm-8 col-md-6">
-                                <div class="single-price">
+                                <div class="single-price shadow">
                                     <div class="part-price">
                                         <span class="start-text">Starting At</span>
                                         <span class="price-text">৳1280</span>
@@ -118,7 +118,7 @@
                             </div>
 
                             <div class="col-xl-4 col-lg-4 col-sm-8 col-md-6">
-                                <div class="single-price">
+                                <div class="single-price shadow">
                                     <div class="part-price">
                                         <span class="start-text">Starting At</span>
                                         <span class="price-text">৳2350</span>

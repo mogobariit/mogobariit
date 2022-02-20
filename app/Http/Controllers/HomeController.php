@@ -35,7 +35,7 @@ public function shearheosting(){
     return view('site.pages.shearehosting');
 }
 public function contactpage(){
-    return view('site.pages.contactpage');
+    return view('site.pages.contact');
 }
 
 }

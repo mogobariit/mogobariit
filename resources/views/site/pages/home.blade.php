@@ -32,7 +32,7 @@
             </div>
         </div>
         <div class="swiper-slide " data-zanim-timeline="{} ">
-            <div class="bg-holder " style="background-image:url(assets/img/header-5.jpg); "></div>
+            <div class="bg-holder " style="background-image:url({{asset('site')}}/assets/img/header-5.jpg); "></div>
             <!--/.bg-holder-->
             <div class="container ">
                 <div class="row min-vh-90 py-8 align-items-center " data-inertia='{"weight ":1.5}'>
@@ -57,7 +57,7 @@
             </div>
         </div>
         <div class="swiper-slide " data-zanim-timeline="{} ">
-            <div class="bg-holder " style="background-image:url(assets/img/header-1.jpg); "></div>
+            <div class="bg-holder " style="background-image:url({{asset('site')}}/assets/img/header-1.jpg); "></div>
             <!--/.bg-holder-->
             <div class="container ">
                 <div class="row min-vh-90 py-8 align-items-center " data-inertia='{"weight ":1.5}'>
@@ -410,7 +410,7 @@
     </div>
     <div class="row overflow-hidden ">
         <div class="col-lg-6 col-md-6 col-12 col-sm-12 pe-lg-3 ">
-            <img class="rounded-3 img-fluid " src="./assets/img/why-choose-us.jpg" alt="about" />
+            <img class="rounded-3 img-fluid " src="{{asset('site')}}/assets/img/why-choose-us.jpg" alt="about" />
         </div>
         <div class="col-lg-6 col-md-6 col-12 col-sm-12 px-lg-5 mt-6 mt-lg-0 " data-zanim-timeline="{} "
             data-zanim-trigger="scroll ">
@@ -478,37 +478,37 @@
         <div class="row client">
             <div class="col-md-6 col-lg-3 col-sm-6 col-6">
                 <div class="border-img ">
-                    <img src="./assets/img/partner/download (7).png " alt=" " class=" ">
+                    <img src="{{asset('site')}}/assets/img/partner/download (7).png " alt=" " class=" ">
                 </div>
             </div>
             <div class="col-md-6 col-lg-3 col-sm-6 col-6 ">
                 <div class="border-img ">
-                    <img src="./assets/img/partner/download (2).png " alt=" " class=" ">
+                    <img src="{{asset('site')}}/assets/img/partner/download (2).png " alt=" " class=" ">
                 </div>
             </div>
             <div class="col-md-6 col-lg-3 col-sm-6 col-6 ">
                 <div class="border-img ">
-                    <img src="./assets/img/partner/download (3).png " alt=" " class=" ">
+                    <img src="{{asset('site')}}/assets/img/partner/download (3).png " alt=" " class=" ">
                 </div>
             </div>
             <div class="col-md-6 col-lg-3 col-sm-6 col-6  ">
                 <div class="border-img ">
-                    <img src="./assets/img/partner/download (7).png " alt=" " class=" ">
+                    <img src="{{asset('site')}}/assets/img/partner/download (7).png " alt=" " class=" ">
                 </div>
             </div>
             <div class="col-md-6 col-lg-3 col-sm-6 col-6  ">
                 <div class="border-img ">
-                    <img src="./assets/img/partner/download (7).png " alt=" " class=" ">
+                    <img src="{{asset('site')}}/assets/img/partner/download (7).png " alt=" " class=" ">
                 </div>
             </div>
             <div class="col-md-6 col-lg-3 col-sm-6 col-6  ">
                 <div class="border-img ">
-                    <img src="./assets/img/partner/download (7).png " alt=" " class=" ">
+                    <img src="{{asset('site')}}/assets/img/partner/download (7).png " alt=" " class=" ">
                 </div>
             </div>
             <div class="col-md-6 col-lg-3 col-sm-6 col-6  ">
                 <div class="border-img ">
-                    <img src="./assets/img/partner/download (7).png " alt=" " class=" ">
+                    <img src="{{asset('site')}}/assets/img/partner/download (7).png " alt=" " class=" ">
                 </div>
             </div>
         </div>
@@ -516,6 +516,12 @@
 
 </div>
 <div class="container">
+    <div class="text-center  ">
+        <h3 class="fs-2 fs-md-3 ">Contact Us</h3>
+        <hr class="short "
+            data-zanim-xs='{ "from ":{ "opacity ":0, "width ":0}, "to ":{ "opacity ":1, "width ": "4.20873rem "}, "duration ":0.8} '
+            data-zanim-trigger="scroll " />
+    </div>
     <div class="row align-items-center text-white ">
         <div class="col-lg-8 col-md-6 ">
             <h5 class="text-dark text-center mt-5 mb-3

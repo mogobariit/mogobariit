@@ -356,7 +356,7 @@
                 </div>
             </div>
             <div class="col-xl-12 col-lg-12">
-                <div class="tab-content ">
+                <div class="tab-content shadow">
                     <div class="tab-pane fade show active collapse multi-collapse" id="unlimitade" role="Toggle"
                         aria-labelledby="unlimitade">
                         <div class="section-title text-center">
@@ -367,7 +367,7 @@
                         </div>
                         <div class="row justify-content-md-start justify-content-sm-center">
                             <div class="col-xl-4 col-lg-4 col-sm-8 col-md-6">
-                                <div class="single-price">
+                                <div class="single-price shadow">
                                     <div class="part-price">
                                         <span class="start-text">Starting At</span>
                                         <span class="price-text">৳800</span>
