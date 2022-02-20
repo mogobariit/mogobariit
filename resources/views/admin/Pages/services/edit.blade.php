@@ -19,9 +19,10 @@
                     <div class="col-md-12">
                         <label for="validationDefaultUsername" class="form-label">Icon</label>
                         <div class="input-group">
-                            <input type="text" class="form-control @error('icon') validation-required @enderror"
+                            <input type="file" class="form-control @error('icon') validation-required @enderror"
                                 id="validationDefaultUsername" aria-describedby="inputGroupPrepend2" required
-                                name="icon" value="{{$service->icon}}">
+                                name="icon" value="">
+                            <img src="{{asset($service->icon)}}" alt="" width="70" height="70">
                         </div>
                     </div>
                     <div class="col-md-12">
@@ -38,7 +39,7 @@
                     <div class="col-md-12">
                         <label for="validationDefaultUsername" class="form-label">Email</label>
                         <div class="input-group">
-                            <input type="text" class="form-control @error('logo') validation-required @enderror"
+                            <input type="text" class="form-control @error('description') validation-required @enderror"
                                 id="validationDefaultUsername" aria-describedby="inputGroupPrepend2" required
                                 name="description" value="{{$service->description}}">
                         </div>

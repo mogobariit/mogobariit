@@ -42,14 +42,18 @@ class ServiceController extends Controller
    'course_name' => 'required|unique:services,course_name,max:20',
   ]);
   $service              = new Service();
-  $service->icon        = $request->icon;
   $service->description = $request->description;
   $service->course_name = $request->course_name;
-
+  if($request->hasFile('icon')){
+      $file = $request->file('icon');
+      $ext = $file->getClientOriginalExtension();
+      $filename = uniqid().'.' .$ext;
+      $file->move('admin/uploads/', $filename);
+      $service->icon = 'admin/uploads/'.$filename;
   $service->save();
-  return redirect()->route('services.index')->with('success', 'Service Deleted Successfully');
+  return redirect()->route('services.index')->with('success', 'Service Added Successfully');
  }
-
+ }
  /**
   * Display the specified resource.
   *
@@ -81,18 +85,18 @@ class ServiceController extends Controller
   */
  public function update(Request $request, Service $service)
  {
-  $request->validate([
-   'icon'        => 'required',
-   'course_name' => 'required|unique:services|min:5|max:20',
-   'description' => 'required|min:20 ,max:50',
-  ]);
-  $service->icon        = $request->icon;
   $service->description = $request->description;
   $service->course_name = $request->course_name;
+  if($request->hasFile('icon')){
+    $file = $request->file('icon');
+    $ext = $file->getClientOriginalExtension();
+    $filename = uniqid().'.' .$ext;
+    $file->move('admin/uploads/', $filename);
+    $service->icon = 'admin/uploads/'.$filename;
   $service->update();
   return redirect()->route('services.index')->with('success', 'Service Update Successfully');
  }
-
+ }
  /**
   * Remove the specified resource from storage.
   *

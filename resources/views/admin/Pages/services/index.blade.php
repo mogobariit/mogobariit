@@ -27,7 +27,7 @@
                             @foreach ($services as $service )
                             <tr class="odd">
                                 <td class="dtr-control sorting_1" tabindex="0">{{ $service->id }}</td>
-                                <td> {!! $service->icon !!} </td>
+                                <td> <img src="{{$service->icon}}" alt="" width="70" height="70"> </td>
                                 <td> {{ $service->course_name}} </td>
                                 <td> {{ $service->description }} </td>
                                 <td class=" d-flex">

@@ -19,7 +19,7 @@
                     <div class="col-md-12">
                         <label for="validationDefaultUsername" class="form-label">Icon</label>
                         <div class="input-group">
-                            <input type="text" class="form-control @error('icon') validation-required @enderror"
+                            <input type="file" class="form-control @error('icon') validation-required @enderror"
                                 id="validationDefaultUsername" aria-describedby="inputGroupPrepend2" required
                                 name="icon">
                         </div>

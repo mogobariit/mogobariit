@@ -28,33 +28,41 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;family=Open+Sans:wght@300;400;600;700;800&amp;display=swap"
         rel="stylesheet">
+    @yield('styles')
 </head>
 
 <body style="background-color: #e6e7e8;">
 
     <div class="bg-dark py-1 d-none d-sm-block text-white fw-bold">
         <div class="container">
+            @foreach ( $topbar as $tops)
+
+
             <div class="row align-items-center gx-4">
                 <div class="col-auto d-none d-lg-block fs--1"><span class="fas fa-map-marker-alt text-white me-2"
-                        data-fa-transform="grow-3"></span>Ka-119/A ,Kuril, Vatara ,Dhaka-1229 </div>
+                        data-fa-transform="grow-3"></span>{{ $tops->location }} </div>
                 <div class="col-auto ms-md-auto order-md-2 d-none d-sm-flex fs--1 align-items-center"><span
-                        class="far fa-envelope text-white me-2" data-fa-transform="grow-3"></span>mogobaribd@gmail.com
+                        class="far fa-envelope text-white me-4" data-fa-transform="grow-3"></span>{{ $tops->email }}
                 </div>
-                <div class="col-auto px-lg-11 px-11  me-auto"><span class="fas fa-phone-alt text-white"
+                <div class="col-auto px-lg-11 px-11  "><span class="fas fa-phone-alt text-white"
                         data-fa-transform="shrink-3"></span>
-                    <a class="ms-2 fs--1 text-white fw-bold py-11" href="tel:0188665161"> Hotline : 0188665161 </a>
+                    <a class="ms-2 fs--1 text-white fw-bold py-11" href="tel:0188665161"> Hotline
+                        :{{ $tops->phone }}
+                    </a>
                 </div>
 
             </div>
+            @endforeach
         </div>
     </div>
     <div class="sticky-top navbar-elixir z-index-2">
 
         <nav class="navbar navbar-expand-lg bg-white w-100">
             <div class="container">
-                <a class="navbar-brand" href="{{route('/')}}"><img height="55px"
-                        src="{{asset('site')}}/assets/img/img/mogobari it logo.png" alt="logo" /></a><button
-                    class="navbar-toggler p-0" type="button" data-bs-toggle="collapse"
+                @foreach ($logos as $logo )
+                <a class="navbar-brand" href="{{route('/')}}"><img height="55px" src="{{$logo->logo}}" alt="logo" /></a>
+                @endforeach
+                <button class="navbar-toggler p-0" type="button" data-bs-toggle="collapse"
                     data-bs-target="#primaryNavbarCollapse" aria-controls="primaryNavbarCollapse" aria-expanded="false"
                     aria-label="Toggle navigation"><span class="hamburger hamburger--emphatic"><span
                             class="hamburger-box"><span class="hamburger-inner"></span></span></span></button>
@@ -89,7 +97,8 @@
                                             class="fas fa-envelope-open-text size"></i>Sheare Hosting</a></li>
 
                                 <li><a class="dropdown-item hover-bg-200" href=""><i
-                                            class="fab fa-slideshare size"></i>Cloud Hosting</a></li>
+                                            class="fab fa-slideshare size"></i>Cloud
+                                        Hosting</a></li>
                                 <li><a class="dropdown-item hover-bg-200" href=""><i
                                             class="far fa-window-maximize size"></i>Windows Hosting</a></li>
 
@@ -101,12 +110,14 @@
                             <ul class="dropdown-menu">
                                 <li class="">
                                     <a class="dropdown-item hover-bg-200" href="# "><i
-                                            class="fas fa-archive size"></i>Digital Marketing</a>
+                                            class="fas fa-archive size"></i>Digital
+                                        Marketing</a>
                                 </li>
 
                                 <li>
                                     <a class="dropdown-item hover-bg-200" href="# "><i
-                                            class="fas fa-atom size"></i>Grapic Desing</a>
+                                            class="fas fa-atom size"></i>Grapic
+                                        Desing</a>
                                 </li>
 
                                 <li>
@@ -114,12 +125,14 @@
                                         Desing</a>
                                 </li>
                                 <li><a class="dropdown-item hover-bg-200" href="# "><i
-                                            class="fas fa-adjust size"></i>Web Development</a></li>
+                                            class="fas fa-adjust size"></i>Web
+                                        Development</a></li>
                                 <li><a class="dropdown-item hover-bg-200" href="# "><i class="fas fa-phone size"></i>App
                                         Development</a></li>
                                 <li>
                                     <a class="dropdown-item hover-bg-200 " href="# "> <i
-                                            class="fas fa-poll size"></i>UI/UX Design</a>
+                                            class="fas fa-poll size"></i>UI/UX
+                                        Design</a>
                                 </li>
                                 <li>
 
@@ -135,11 +148,13 @@
                             <ul class="dropdown-menu">
                                 <li>
                                     <a class="dropdown-item hover-bg-200" href="# "><i
-                                            class="fas fa-archive size"></i>Digital Marketing</a>
+                                            class="fas fa-archive size"></i>Digital
+                                        Marketing</a>
                                 </li>
                                 <li>
                                     <a class="dropdown-item hover-bg-200" href="# "><i
-                                            class="fas fa-atom size"></i>Grapic Desing</a>
+                                            class="fas fa-atom size"></i>Grapic
+                                        Desing</a>
                                 </li>
 
                                 <li>
@@ -149,14 +164,17 @@
                                 <li><a class="dropdown-item hover-bg-200" href="# "><i class="fas fa-poll size"></i>Web
                                         Development</a></li>
                                 <li><a class="dropdown-item hover-bg-200" href="# "><i
-                                            class="fab fa-android size"></i>App Development</a></li>
+                                            class="fab fa-android size"></i>App
+                                        Development</a></li>
                                 <li>
                                     <a class="dropdown-item hover-bg-200" href="# "> <i
-                                            class="fas fa-play size"></i>Video Editing</a>
+                                            class="fas fa-play size"></i>Video
+                                        Editing</a>
                                 </li>
                                 <li>
                                     <a class="dropdown-item hover-bg-200" href="# "> <i
-                                            class="fas fa-poll size"></i>Office Program</a>
+                                            class="fas fa-poll size"></i>Office
+                                        Program</a>
                                 </li>
 
                             </ul>
@@ -195,12 +213,15 @@
         <div class="container align-items-center ">
             <div class="row align-items-center ">
                 <div class="col-lg-3 col-6 col-sm-6">
+                    @foreach ($logos as $logo)
+
+
                     <div class="footer-logo">
-                        <img src="./assets/img/img/mogobari it logo-01.png" class="img-fluid " height="55px" alt="">
-                        <p class="mt-1 fs--12 text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic,
-                            facilis ea, perspiciatis consequatur inventore mollitia quod dolor, distinctio nostrum ex
-                            sed libero corrupti quia illo aliquam architecto eos velit dignissimos.</p>
+                        <img src="{{$logo->logo}}" class="img-fluid bg-100" height="55px" alt="">
+                        <p class="mt-1 fs--12 text-white">{{$logo->description}}</p>
                     </div>
+                    @endforeach
+
                 </div>
                 <div class="col-lg-3 col-6 col-sm-6 align-items-center">
                     <h4 class=" text-white mt-5">Services</h4>
@@ -326,6 +347,7 @@
 
         <
         /html>
+
 
 
 
