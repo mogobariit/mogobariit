@@ -45,7 +45,7 @@ class SliderController extends Controller
         $slider = new Slider();
         $slider->description = $request->description;
         $slider->title = $request->title;
-        $slider->slug = Str::slug($request->name);
+        $slider->slug = Str::slug($request->title);
         if ($request->hasFile('slide_img')) {
             $file = $request->file('slide_img');
             $ext = $file->getClientOriginalExtension();

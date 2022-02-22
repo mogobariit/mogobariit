@@ -19,10 +19,13 @@
                     <div class="col-md-12">
                         <label for="validationDefaultUsername" class="form-label">Icon</label>
                         <div class="input-group">
-                            <input type="text" class="form-control @error('icon') validation-required @enderror"
+                            <input type="file" class="form-control @error('img') validation-required @enderror"
                                 id="validationDefaultUsername" aria-describedby="inputGroupPrepend2" required
-                                name="icon">
+                                name="img">
                         </div>
+                        @if ($errors->has('img'))
+                        <span class="text-danger">{{ $errors->first('img') }}</span>
+                        @endif
                     </div>
                     <div class="col-md-12">
                         <label for="validationDefaultUsername" class="form-label">Service Name</label>
@@ -38,9 +41,10 @@
                     <div class="col-md-12">
                         <label for="validationDefaultUsername" class="form-label">Description</label>
                         <div class="input-group">
-                            <input type="text" class="form-control @error('description') validation-required @enderror"
+                            <textarea type="text"
+                                class="form-control @error('description') validation-required @enderror"
                                 id="validationDefaultUsername" aria-describedby="inputGroupPrepend2" required
-                                name="description">
+                                name="description"> </textarea>
                         </div>
                         @if ($errors->has('description'))
                         <span class="text-danger">{{ $errors->first('description') }}</span>

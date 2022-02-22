@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Course;
 use App\Models\Partner;
 use App\Models\Service;
+use App\Models\Slider;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -28,9 +30,11 @@ class HomeController extends Controller
     {
 
         $ourPortfolios = Category::latest()->limit(3)->get();
+        $sliders = Slider::latest()->limit(3)->get();
         $services = Service::latest()->get();
         $partners = Partner::latest()->get();
-        return view('site.pages.home', compact(['ourPortfolios','services','partners']));
+        $courses = Course::latest()->get();
+        return view('site.pages.home', compact(['ourPortfolios','services','partners','sliders','courses']));
     }
 public function domain(){
     return view('site.pages.domain');
@@ -44,6 +48,15 @@ public function shearheosting(){
 public function contactpage(){
     return view('site.pages.contact');
 }
-
-
+ public function singleCourse($slug)
+{
+    $course = Course::where('slug', $slug)->first();
+    return view('site.pages.singleSlider',compact('course'));
 }
+ public function singleSlider($slug)
+{
+    $slider = Slider::where('slug', $slug)->first();
+    return view('site.pages.singlecourse',compact('slider'));
+}
+
+} 

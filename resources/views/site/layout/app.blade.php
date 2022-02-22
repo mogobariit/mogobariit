@@ -36,13 +36,11 @@
     <div class="bg-dark py-1 d-none d-sm-block text-white fw-bold">
         <div class="container">
             @foreach ( $topbar as $tops)
-
-
             <div class="row align-items-center gx-4">
-                <div class="col-auto d-none d-lg-block fs--1"><span class="fas fa-map-marker-alt text-white me-2"
-                        data-fa-transform="grow-3"></span>{{ $tops->location }} </div>
+                <div class="col-auto d-none d-lg-block fs--1"><span
+                        class="fas fa-map-marker-alt text-white me-3"></span>{{ $tops->location }} </div>
                 <div class="col-auto ms-md-auto order-md-2 d-none d-sm-flex fs--1 align-items-center"><span
-                        class="far fa-envelope text-white me-4" data-fa-transform="grow-3"></span>{{ $tops->email }}
+                        class="far fa-envelope text-white me-3"></span>{{ $tops->email }}
                 </div>
                 <div class="col-auto px-lg-11 px-11  "><span class="fas fa-phone-alt text-white"
                         data-fa-transform="shrink-3"></span>
@@ -50,7 +48,6 @@
                         :{{ $tops->phone }}
                     </a>
                 </div>
-
             </div>
             @endforeach
         </div>
@@ -60,7 +57,8 @@
         <nav class="navbar navbar-expand-lg bg-white w-100">
             <div class="container">
                 @foreach ($logos as $logo )
-                <a class="navbar-brand" href="{{route('/')}}"><img height="55px" src="{{$logo->logo}}" alt="logo" /></a>
+                <a class="navbar-brand" href="{{route('/')}}"><img height="55px"
+                        src="{{asset('site/assets/img/img/mogobari it logo.png')}}" alt="logo" /></a>
                 @endforeach
                 <button class="navbar-toggler p-0" type="button" data-bs-toggle="collapse"
                     data-bs-target="#primaryNavbarCollapse" aria-controls="primaryNavbarCollapse" aria-expanded="false"
@@ -185,7 +183,7 @@
                         <li class="nav-item dropdown hover-bg-200"><a class="nav-link " href="{{route('contactpage')}}"
                                 role="button ">Contact</a></li>
                     </ul>
-                    <a class="btn btn-outline-success btn-dark text-white rounded-pill btn-sm border-1 d-block d-lg-inline-block ms-auto my-3 my-lg-0"
+                    <a class="btn hover-bg-700 btn-info text-white rounded-pill btn-sm border-1 d-block d-lg-inline-block ms-auto my-3 my-lg-0"
                         href="" target="_blank ">Sign Up </a>
                 </div>
         </nav>
@@ -202,11 +200,6 @@
     <!-- ===============================================-->
     <!--    End of Main Content-->
     <!-- ===============================================-->
-
-
-
-
-
     <!-- ============================================-->
     <!-- <section> begin ============================-->
     <footer style="background-color: #424344 " class="mt-3">
@@ -214,10 +207,9 @@
             <div class="row align-items-center ">
                 <div class="col-lg-3 col-6 col-sm-6">
                     @foreach ($logos as $logo)
-
-
                     <div class="footer-logo">
-                        <img src="{{$logo->logo}}" class="img-fluid bg-100" height="55px" alt="">
+                        <img src="{{asset('site/assets/img/img/mogobari it logo-01.png')}}" class="img-fluid"
+                            height="55px" alt="">
                         <p class="mt-1 fs--12 text-white">{{$logo->description}}</p>
                     </div>
                     @endforeach
@@ -226,7 +218,8 @@
                 <div class="col-lg-3 col-6 col-sm-6 align-items-center">
                     <h4 class=" text-white mt-5">Services</h4>
                     <ul class="list-unstyled text-center">
-                        <li class="mb-2"><a class=" text-white fs--12 lh-1 " href=" ">Contact Us</a></li>
+                        <li class="mb-2"><a class=" text-white fs--12 lh-1 " href="{{route('contactpage')}}">Contact
+                                Us</a></li>
                         <li class="mb-2"><a class="text-white fs--12 lh-1" href="#! ">Our Office</a></li>
                         <li class="mb-2"><a class=" text-white fs--12 lh-1 " href="#! ">FAQ</a></li>
                         <li class="mb-2"><a class="text-white fs--12 lh-1" href="#! ">Privacy Policy</a></li>
@@ -286,7 +279,7 @@
     <!-- ===============================================-->
     <!--    JavaScripts-->
     <!-- ===============================================-->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
@@ -294,12 +287,11 @@
     </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
         integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
-    </script>
+    </script> -->
     <script src="{{asset('site')}}/assets/js/jquery-3.6.0.min.js ">
     </script>
     <script src="{{asset('site/assets/js/jquery-3.3.1.slim.min.js')}}"></script>
     <script src="./assets/js/script.js "></script>
-
     <script src="{{asset('site')}}/assets/js/slick.min.js "></script>
     <script src="{{asset('site')}}/assets/js/myjs.js "></script>
     <script src="{{asset('site')}}/vendors/popper/popper.min.js "></script>

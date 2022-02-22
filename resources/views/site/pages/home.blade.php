@@ -8,86 +8,42 @@
 </style>
 @endsection
 @section('site-cotentn')
-<div class="swiper theme-slider min-vh-90 "
-    data-swiper='{"loop ":true,"allowTouchMove ":false,"autoplay ":{"delay ":5000},"effect ":"fade ","speed ":800}'>
+<div class="swiper theme-slider min-vh-80 "
+    data-swiper='{"loop ":true,"allowTouchMove ":false,"autoplay ":{"delay ":3000},"effect ":"fade ","speed ":800}'>
     <div class="swiper-wrapper ">
+        @foreach ($sliders as $slider)
+
+
         <div class="swiper-slide " data-zanim-timeline="{} ">
             <div class="bg-holder">
-                <img src="{{asset('site/assets/img/background-1.jpg')}}" alt="" class="img-fluid">
+                <img src="{{$slider->slide_img}}" alt="" class="img-fluid">
             </div>
             <!--/.bg-holder-->
             <div class="container ">
-                <div class="row min-vh-90 py-8 align-items-center " data-inertia='{"weight ":1.5}'>
+                <div class="row min-vh-80 py-8 align-items-center ">
                     <div class="col-sm-8 col-lg-7 px-5 px-sm-3 ">
                         <div class="overflow-hidden ">
-                            <h1 class="fs-4 fs-md-5 lh-1 text-white " data-zanim-xs='{"delay ":0}'>Helping
-                                Leaders
+                            <h1 class="fs-4 fs-md-3 lh-1 text-white ">
+                                {!! Str::limit($slider->title,40) !!}
                             </h1>
                         </div>
                         <div class="overflow-hidden ">
-                            <p class="text-dark pt-4 mb-5 fs-1 fs-md-2 lh-xs " data-zanim-xs='{"delay ":0.1}'>We
-                                look forward to help you in taking your company to new height.</p>
+                            <p class="text-dark pt-4 mb-5 fs-2 fs-md-1 lh-xs "> {!!
+                                Str::limit($slider->description,150) !!} </p>
                         </div>
-                        <div class="overflow-hidden ">
-                            <div data-zanim-xs='{"delay ":0.2}'><a
-                                    class="btn btn-dark me-3 mt-3  btn-outline-success text-white" href="# ">Read
+                        <div class=" overflow-hidden ">
+                            <div><a class=" btn btn-info me-3 mt-3 text-white hover-bg-700 rounded-3"
+                                    href="{{ route('singleSlider', ['slug' =>$slider->slug]) }}">Read
                                     more<span class="fas fa-chevron-right ms-2 "></span></a><a
-                                    class="btn btn-success btn-outline-dark text-white mt-3 " href="
-                                            ">Contact us<span class="fas fa-chevron-right ms-2 "></span></a></div>
+                                    class="btn btn-info hover-bg-700 text-white mt-3 rounded-3 " href="{{route('contactpage')}}
+                                     ">Contact us<span class="fas fa-chevron-right ms-2"></span></a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="swiper-slide " data-zanim-timeline="{} ">
-            <div class="bg-holder " style="background-image:url({{asset('site')}}/assets/img/header-5.jpg); "></div>
-            <!--/.bg-holder-->
-            <div class="container ">
-                <div class="row min-vh-90 py-8 align-items-center " data-inertia='{"weight ":1.5}'>
-                    <div class="col-sm-8 col-lg-7 px-5 px-sm-3 ">
-                        <div class="overflow-hidden ">
-                            <h1 class="fs-4 fs-md-5 lh-1 " data-zanim-xs='{"delay ":0}'>Expert Consultants
-                            </h1>
-                        </div>
-                        <div class="overflow-hidden ">
-                            <p class="text-primary pt-4 mb-5 fs-1 fs-md-2 lh-xs " data-zanim-xs='{"delay ":0.1}'>Over 10
-                                years of experience in helping clients
-                                finding comprehensive solutions.</p>
-                        </div>
-                        <div class="overflow-hidden ">
-                            <div data-zanim-xs='{"delay ":0.2}'><a class="btn btn-primary me-3 mt-3 " href="#! ">Read
-                                    more<span class="fas fa-chevron-right ms-2 "></span></a><a
-                                    class="btn btn-warning mt-3 " href="contact.html
-                                            ">Contact us<span class="fas fa-chevron-right ms-2 "></span></a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="swiper-slide " data-zanim-timeline="{} ">
-            <div class="bg-holder " style="background-image:url({{asset('site')}}/assets/img/header-1.jpg); "></div>
-            <!--/.bg-holder-->
-            <div class="container ">
-                <div class="row min-vh-90 py-8 align-items-center " data-inertia='{"weight ":1.5}'>
-                    <div class="col-sm-8 col-lg-7 px-5 px-sm-3 ">
-                        <div class="overflow-hidden ">
-                            <h1 class="fs-4 fs-md-5 lh-1 " data-zanim-xs='{"delay ":0}'>Growth Partners</h1>
-                        </div>
-                        <div class="overflow-hidden ">
-                            <p class="text-primary pt-4 mb-5 fs-1 fs-md-2 lh-xs " data-zanim-xs='{"delay ":0.1}'>Connect
-                                with top consultants hand-picked by
-                                Elixir consulting and finance.</p>
-                        </div>
-                        <div class="overflow-hidden ">
-                            <div data-zanim-xs='{"delay ":0.2}'><a class="btn btn-primary me-3 mt-3 " href="#! ">See
-                                    more<span class="fas fa-chevron-right ms-2 "></span></a><a
-                                    class="btn btn-warning mt-3 " href="contact.html
-                                            ">Contact us<span class="fas fa-chevron-right ms-2 "></span></a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @endforeach
     </div>
     <div class="swiper-nav ">
         <div class="swiper-button-prev "><span class="fas fa-chevron-left "></span></div>
@@ -128,7 +84,7 @@
                         <p class="mt-3 fs--12">{!! Str::limit($ourPortfolio->description,200) !!}</p>
                     </div>
                     <div class="overflow-hidden ">
-                        <div><a class="d-flex align-items-centerbtn btn-outline-success btn-dark text-white rounded-pill btn-sm border-1 d-block d-lg-inline-block "
+                        <div><a class="d-flex align-items-centerbtn  btn-info hover-bg-700  text-white rounded-pill btn-sm border-1 d-block d-lg-inline-block "
                                 href="#! ">See
                                 More</a></div>
                     </div>
@@ -206,94 +162,42 @@
                 <hr class="short "
                     data-zanim-xs='{ "from ":{ "opacity ":0, "width ":0}, "to ":{ "opacity ":1, "width ": "4.20873rem "}, "duration ":0.8} '
                     data-zanim-trigger="scroll " />
-                <p class="px-lg-4 mt-3 ">Get expert consultancy and support with Elixir, an advisory firm that stand
+                <p class="px-lg-4 mt-3 ">Get expert consultancy and support with Elixir, an advisory firm that
+                    stand
                     by your side always.</p>
 
             </div>
         </div>
 
-        <div class=" height-400 overflow-hidden">
-            <div class="row justify-content-center text-center overflow-hidden responsives">
-                <div class="col-sm-4 col-6 col-lg-3 mt-4  shadow rounded-3 bg-white hover-area ml-1"
-                    data-zanim-timeline="{} " data-zanim-trigger="scroll ">
-                    <div class="ring-icon mx-auto shadow icon-width" data-zanim-xs='{ "delay ":0} '><span
-                            class="far fa-chart-bar "></span></div>
-                    <h5 class="mt-4 align-items-center px-2 ml-1" data-zanim-xs='{ "delay ":0.1} '>Digital Marketing
-                    </h5>
-                    <p class="mb-0 mt-3 px-2 align-items-center ml-1" data-zanim-xs='{ "delay ":0.2} '>
-                        Solution for every business related problems, readily and skillfully.</p>
-                </div>
-                <div class="col-sm-4 col-6  col-lg-3 mt-4 shadow rounded-3 ml-1 bg-white hover-area overflow-hidden"
-                    data-zanim-timeline="{} " data-zanim-trigger="scroll ">
-                    <div class="ring-icon mx-auto shadow icon-width" data-zanim-xs='{ "delay ":0} '><span
-                            class="far fa-bell "></span>
-                    </div>
-                    <h5 class="mt-4 align-items-center px-2 ml-1" data-zanim-xs='{ "delay ":0.1} '>Risk Management
-                    </h5>
-                    <p class="mb-0 mt-3 px-2 align-items-center ml-1 " data-zanim-xs='{ "delay ":0.2} '>
-                        Calculate every possible risk in your business, take control over them.</p>
-                </div>
-                <div class="col-sm-4 col-6 col-lg-3 mt-4 shadow rounded-3 ml-1 bg-white hover-area overflow-hidden"
-                    data-zanim-timeline="{} " data-zanim-trigger="scroll ">
-                    <div class="ring-icon mx-auto shadow icon-width" data-zanim-xs='{ "delay ":0} '><span
-                            class="far fa-lightbulb "></span></div>
-                    <h5 class="mt-4 align-items-center px-2 ml-1 " data-zanim-xs='{ "delay ":0.1} '>Market Research
-                    </h5>
-                    <p class="mb-0 mt-3 px-2 align-items-center ml-1 " data-zanim-xs='{ "delay ":0.2} '>Know the
-                        market before taking any step, reduce risks before you go.
-                    </p>
-                </div>
-                <div class="col-sm-4 col-6 col-lg-3 mt-4 shadow rounded-3 ml-1 bg-white hover-area overflow-hidden"
-                    data-zanim-timeline="{} " data-zanim-trigger="scroll ">
-                    <div class="ring-icon mx-auto shadow icon-width" data-zanim-xs='{ "delay ":0} '><span
-                            class="far fa-lightbulb "></span></div>
-                    <h5 class="mt-4 align-items-center px-2 ml-1 " data-zanim-xs='{ "delay ":0.1} '>Market Research
-                    </h5>
-                    <p class="mb-0 mt-3 px-2 align-items-center ml-1 " data-zanim-xs='{ "delay ":0.2} '>Know the
-                        market before taking any step, reduce risks before you go.
-                    </p>
-                </div>
-                <div class="col-sm-4 col-6 col-lg-3 mt-4 shadow rounded-3 ml-1 bg-white hover-area overflow-hidden"
-                    data-zanim-timeline="{} " data-zanim-trigger="scroll ">
-                    <div class="ring-icon mx-auto shadow icon-width" data-zanim-xs='{ "delay ":0} '><span
-                            class="far fa-chart-bar "></span></div>
-                    <h5 class="mt-4 align-items-center px-2 ml-1" data-zanim-xs='{ "delay ":0.1} '>Digital Marketing
-                    </h5>
-                    <p class="mb-0 mt-3 px-2 align-items-center ml-1" data-zanim-xs='{ "delay ":0.2} '>
-                        Solution for every business related problems, readily and skillfully.</p>
-                </div>
+        <div class="row g-4 mt-4">
+            @foreach ($courses as $course )
 
-
-                <div class="col-sm-4 col-6 col-lg-3 mt-4 shadow rounded-3 ml-1 bg-white hover-area overflow-hidden"
-                    data-zanim-timeline="{} " data-zanim-trigger="scroll ">
-                    <div class="ring-icon mx-auto shadow icon-width" data-zanim-xs='{ "delay ":0} '><span
-                            class="far fa-chart-bar "></span></div>
-                    <h5 class="mt-4 align-items-center px-2 ml-1" data-zanim-xs='{ "delay ":0.1} '>Digital Marketing
-                    </h5>
-                    <p class="mb-0 mt-3 px-2 align-items-center ml-1" data-zanim-xs='{ "delay ":0.2} '>
-                        Solution for every business related problems, readily and skillfully.</p>
-                </div>
-                <div class="col-sm-4 col-6 col-lg-3 mt-4 shadow rounded-3 ml-1 bg-white hover-area overflow-hidden"
-                    data-zanim-timeline="{} " data-zanim-trigger="scroll ">
-                    <div class="ring-icon mx-auto shadow icon-width" data-zanim-xs='{ "delay ":0} '><span
-                            class="far fa-bell "></span>
+            <div class="col-md-6 col-lg-4 col-4 ">
+                <div class="card hover-areas">
+                    <a href="{{ route('singleCourse', ['slug' =>$course->slug]) }}"><img class="card-img-top"
+                            src="{{$course->img}}" alt="Featured Image"></a>
+                    <div class="card-body" data-zanim-timeline="{}">
+                        <div class="overflow-hidden text-center"><a
+                                href="{{ route('singleCourse', ['slug' =>$course->slug]) }}">
+                                <h5 data-zanim-xs="{&quot;delay&quot;:0}"
+                                    style="transform: translate(0px, 0px); opacity: 1;">{{$course->course_name}}
+                                </h5>
+                            </a></div>
+                        <div class="overflow-hidden">
+                            <p class="mt-3" data-zanim-xs="{&quot;delay&quot;:0.2}"
+                                style="transform: translate(0px, 0px); opacity: 1;">{!!
+                                Str::limit($course->description,100) !!}</p>
+                        </div>
+                        <div class="overflow-hidden ">
+                            <div><a class="d-flex align-items-centerbtn  btn-info hover-bg-700  text-white rounded-pill btn-sm border-1 d-block d-lg-inline-block "
+                                    href="{{ route('singleCourse', ['slug' =>$course->slug]) }}">See
+                                    More</a></div>
+                        </div>
                     </div>
-                    <h5 class="mt-4 align-items-center px-2 ml-1" data-zanim-xs='{ "delay ":0.1} '>Risk Management
-                    </h5>
-                    <p class="mb-0 mt-3 px-2 align-items-center ml-1 " data-zanim-xs='{ "delay ":0.2} '>
-                        Calculate every possible risk in your business, take control over them.</p>
-                </div>
-                <div class="col-sm-4 col-6 col-lg-3 mt-4 shadow rounded-3 ml-1 bg-white hover-area overflow-hidden"
-                    data-zanim-timeline="{} " data-zanim-trigger="scroll ">
-                    <div class="ring-icon mx-auto shadow icon-width" data-zanim-xs='{ "delay ":0} '><span
-                            class="far fa-lightbulb "></span></div>
-                    <h5 class="mt-4 align-items-center px-2 ml-1 " data-zanim-xs='{ "delay ":0.1} '>Market Research
-                    </h5>
-                    <p class="mb-0 mt-3 px-2 align-items-center ml-1 " data-zanim-xs='{ "delay ":0.2} '>Know the
-                        market before taking any step, reduce risks before you go.
-                    </p>
                 </div>
             </div>
+            @endforeach
+
 
 
         </div>

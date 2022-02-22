@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Course;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Str;
 class CourseController extends Controller
 {
     /**
@@ -37,17 +37,24 @@ class CourseController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'icon'        => 'required',
-            'description' => 'required|max:50',
-            'course_name' => 'required|unique:courses,course_name,max:20',
+            'img'        => 'required',
+            'description' => 'required|',
+            'course_name' => 'required|unique:courses',
            ]);
-           $service              = new Course();
-           $service->icon        = $request->icon;
-           $service->description = $request->description;
-           $service->course_name = $request->course_name;
 
-           $service->save();
-           return redirect()->route('course.index')->with('success', 'Course Deleted Successfully');
+           $course              = new Course();
+           $course->description = $request->description;
+           $course->course_name = $request->course_name;
+           $course->slug = Str::slug($request->course_name);
+           if($request->hasFile('img')){
+            $file = $request->file('img');
+            $ext = $file->getClientOriginalExtension();
+            $filename = uniqid().'.' .$ext;
+            $file->move('admin/uploads/', $filename);
+            $course->img = 'admin/uploads/'.$filename;
+        }
+           $course->save();
+           return redirect()->route('course.index')->with('success', 'Course Added Successfully');
     }
 
     /**
@@ -81,14 +88,17 @@ class CourseController extends Controller
      */
     public function update(Request $request, Course $course)
     {
-        $request->validate([
-            'icon'        => 'required',
-            'course_name' => 'required|unique:courses|min:5|max:20',
-            'description' => 'required|min:20 ,max:50',
-           ]);
-           $course->icon        = $request->icon;
+
+
            $course->description = $request->description;
            $course->course_name = $request->course_name;
+           if($request->hasFile('img')){
+            $file = $request->file('img');
+            $ext = $file->getClientOriginalExtension();
+            $filename = uniqid().'.' .$ext;
+            $file->move('admin/uploads/', $filename);
+            $course->img = 'admin/uploads/'.$filename;
+        }
            $course->update();
            return redirect()->route('course.index')->with('success', 'Course Update Successfully');
     }
@@ -103,7 +113,7 @@ class CourseController extends Controller
     {
         if($course){
             $course->delete();
-            return redirect()->route('course.index')->with('success', 'Course Update Successfully');
+            return redirect()->route('course.index')->with('success', 'Course Delete Successfully');
         }
     }
 }

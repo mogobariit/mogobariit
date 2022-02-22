@@ -17,11 +17,14 @@
                     @csrf
                     @method('PUT')
                     <div class="col-md-12">
-                        <label for="validationDefaultUsername" class="form-label">Icon</label>
+                        <label for="validationDefaultUsername" class="form-label">Image</label>
                         <div class="input-group">
-                            <input type="text" class="form-control @error('icon') validation-required @enderror"
+                            <input type="file" class="form-control @error('img') validation-required @enderror"
                                 id="validationDefaultUsername" aria-describedby="inputGroupPrepend2" required
-                                name="icon" value="{{$course->icon}}">
+                                name="img">
+                            <div class="w-25 justify-content-end">
+                                <img src="{{asset($course->img)}}" alt="" height="70px" width="70px">
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-12">

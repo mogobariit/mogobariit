@@ -18,7 +18,7 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Icon</th>
+                                <th>Image</th>
                                 <th>Service Name</th>
                                 <th>Description</th>
                             </tr>
@@ -27,7 +27,7 @@
                             @foreach ($courses as $course )
                             <tr class="odd">
                                 <td class="dtr-control sorting_1" tabindex="0">{{ $course->id }}</td>
-                                <td> {!! $course->icon !!} </td>
+                                <td> <img src="{{ $course->img}}" alt="" height="70px"></td>
                                 <td> {{ $course->course_name}} </td>
                                 <td> {{ $course->description }} </td>
                                 <td class=" d-flex">
