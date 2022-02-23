@@ -36,6 +36,10 @@ Route::get('single-Slider/{slug}',[HomeController::class,'singleSlider'])->name(
 Auth::routes();
 // admin
 
+
+
+Route::group(['middleware' => 'auth'], function()
+{
 Route::get('/home', [App\Http\Controllers\AdminController::class, 'index'])->name('admin-home');
 Route::resource('/categories', CategoryController::class);
 Route::resource('/logo', LogoController::class);
@@ -44,3 +48,4 @@ Route::resource('/topbar', TopbarController::class);
 Route::resource('/services', ServiceController::class);
 Route::resource('/course', CourseController::class);
 Route::resource('/partner', PartnerController::class);
+});

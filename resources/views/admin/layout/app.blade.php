@@ -277,80 +277,46 @@
 
                 <div class="navbar-collapse collapse">
                     <ul class="navbar-nav ms-auto">
+                        <!-- Authentication Links -->
+                        @guest
+                        @if (Route::has('login'))
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        </li>
+                        @endif
+
+                        @if (Route::has('register'))
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        </li>
+                        @endif
+                        @else
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }}
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                        @endguest
+                    </ul>
+                    <!-- <ul class="navbar-nav ms-auto">
                         <li class="nav-item dropdown active">
                             <a class="nav-link dropdown-toggle position-relative" href="#" id="messagesDropdown"
                                 data-bs-toggle="dropdown">
                                 <i class="align-middle fas fa-envelope-open"></i>
                             </a>
-                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end py-0"
-                                aria-labelledby="messagesDropdown">
-                                <div class="dropdown-menu-header">
-                                    <div class="position-relative">
-                                        4 New Messages
-                                    </div>
-                                </div>
-                                <div class="list-group">
-                                    <a href="#" class="list-group-item">
-                                        <div class="row g-0 align-items-center">
-                                            <div class="col-2">
-                                                <img src="{{asset('admin')}}/img/avatars/avatar-5.jpg"
-                                                    class="avatar img-fluid rounded-circle" alt="Michelle Bilodeau">
-                                            </div>
-                                            <div class="col-10 ps-2">
-                                                <div class="text-dark">Michelle Bilodeau</div>
-                                                <div class="text-muted small mt-1">Nam pretium turpis et arcu. Duis arcu
-                                                    tortor.</div>
-                                                <div class="text-muted small mt-1">5m ago</div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <div class="row g-0 align-items-center">
-                                            <div class="col-2">
-                                                <img src="{{asset('admin')}}/img/avatars/avatar-3.jpg"
-                                                    class="avatar img-fluid rounded-circle" alt="Kathie Burton">
-                                            </div>
-                                            <div class="col-10 ps-2">
-                                                <div class="text-dark">Kathie Burton</div>
-                                                <div class="text-muted small mt-1">Pellentesque auctor neque nec urna.
-                                                </div>
-                                                <div class="text-muted small mt-1">30m ago</div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <div class="row g-0 align-items-center">
-                                            <div class="col-2">
-                                                <img src="{{asset('admin')}}/img/avatars/avatar-2.jpg"
-                                                    class="avatar img-fluid rounded-circle" alt="Alexander Groves">
-                                            </div>
-                                            <div class="col-10 ps-2">
-                                                <div class="text-dark">Alexander Groves</div>
-                                                <div class="text-muted small mt-1">Curabitur ligula sapien euismod
-                                                    vitae.</div>
-                                                <div class="text-muted small mt-1">2h ago</div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <div class="row g-0 align-items-center">
-                                            <div class="col-2">
-                                                <img src="{{asset('admin')}}/img/avatars/avatar-4.jpg"
-                                                    class="avatar img-fluid rounded-circle" alt="Daisy Seger">
-                                            </div>
-                                            <div class="col-10 ps-2">
-                                                <div class="text-dark">Daisy Seger</div>
-                                                <div class="text-muted small mt-1">Aenean tellus metus, bibendum sed,
-                                                    posuere ac, mattis non.</div>
-                                                <div class="text-muted small mt-1">5h ago</div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="dropdown-menu-footer">
-                                    <a href="#" class="text-muted">Show all messages</a>
-                                </div>
-                            </div>
+
                         </li>
                         <li class="nav-item dropdown ms-lg-2">
                             <a class="nav-link dropdown-toggle position-relative" href="#" id="alertsDropdown"
@@ -358,66 +324,7 @@
                                 <i class="align-middle fas fa-bell"></i>
                                 <span class="indicator"></span>
                             </a>
-                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end py-0"
-                                aria-labelledby="alertsDropdown">
-                                <div class="dropdown-menu-header">
-                                    4 New Notifications
-                                </div>
-                                <div class="list-group">
-                                    <a href="#" class="list-group-item">
-                                        <div class="row g-0 align-items-center">
-                                            <div class="col-2">
-                                                <i class="ms-1 text-danger fas fa-fw fa-bell"></i>
-                                            </div>
-                                            <div class="col-10">
-                                                <div class="text-dark">Update completed</div>
-                                                <div class="text-muted small mt-1">Restart server 12 to complete the
-                                                    update.</div>
-                                                <div class="text-muted small mt-1">2h ago</div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <div class="row g-0 align-items-center">
-                                            <div class="col-2">
-                                                <i class="ms-1 text-warning fas fa-fw fa-envelope-open"></i>
-                                            </div>
-                                            <div class="col-10">
-                                                <div class="text-dark">Lorem ipsum</div>
-                                                <div class="text-muted small mt-1">Aliquam ex eros, imperdiet vulputate
-                                                    hendrerit et.</div>
-                                                <div class="text-muted small mt-1">6h ago</div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <div class="row g-0 align-items-center">
-                                            <div class="col-2">
-                                                <i class="ms-1 text-primary fas fa-fw fa-building"></i>
-                                            </div>
-                                            <div class="col-10">
-                                                <div class="text-dark">Login from 192.186.1.1</div>
-                                                <div class="text-muted small mt-1">8h ago</div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <div class="row g-0 align-items-center">
-                                            <div class="col-2">
-                                                <i class="ms-1 text-success fas fa-fw fa-bell-slash"></i>
-                                            </div>
-                                            <div class="col-10">
-                                                <div class="text-dark">New connection</div>
-                                                <div class="text-muted small mt-1">Anna accepted your request.</div>
-                                                <div class="text-muted small mt-1">12h ago</div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="dropdown-menu-footer">
-                                    <a href="#" class="text-muted">Show all notifications</a>
-                                </div>
-                            </div>
+
                         </li>
                         <li class="nav-item dropdown ms-lg-2">
                             <a class="nav-link dropdown-toggle position-relative" href="#" id="userDropdown"
@@ -439,7 +346,7 @@
                                     out</a>
                             </div>
                         </li>
-                    </ul>
+                    </ul> -->
                 </div>
             </nav>
             <div class="content" id="app">
